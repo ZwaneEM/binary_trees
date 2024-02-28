@@ -7,29 +7,29 @@
 */
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
-    binary_tree_t *parent_n;
-    
-    if (node)
-    {
-        parent_n = node->parent;
+	binary_tree_t *parent_n;
 
-        if (parent_n)
-        {
-            if (parent_n->parent)
-            {
-                if (parent_n->parent->right == parent_n)
-                {
-                    if (parent_n->parent->left)
-                        return (parent_n->parent->left);
-                }
-                else
-                {
-                    if (parent_n->parent->right)
-                        return (parent_n->parent->right);
-                }
-            }
-        }
-    }
+	if (node)
+	{
+		parent_n = node->parent;
 
-    return (NULL);
+		if (parent_n)
+		{
+			if (parent_n->parent)
+			{
+				if (parent_n->parent->right == parent_n)
+				{
+					if (parent_n->parent->left)
+						return (parent_n->parent->left);
+				}
+				else
+				{
+					if (parent_n->parent->right)
+						return (parent_n->parent->right);
+				}
+			}
+		}
+	}
+
+	return (NULL);
 }

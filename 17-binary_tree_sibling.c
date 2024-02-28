@@ -9,19 +9,19 @@
 */
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
-    if (node && node->parent)
-    {
-        if (node->parent->right == node)
-        {
-            if (node->parent->left)
-                return (node->parent->left);
-        }
-        else
-        {
-            if (node->parent->right)
-                return (node->parent->right);
-        }
-    }
+	if (node && node->parent)
+	{
+		if (node->parent->right == node)
+		{
+			if (node->parent->left)
+			return (node->parent->left);
+		}
+		else
+		{
+			if (node->parent->right)
+				return (node->parent->right);
+		}
+	}
 
-    return (NULL);
+	return (NULL);
 }
