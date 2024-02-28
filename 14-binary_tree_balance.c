@@ -11,7 +11,7 @@ int binary_tree_balance(const binary_tree_t *tree)
 {
 	if (tree)
 	{
-		return (height(tree->left) - height(tree->right));
+		return (binary_height(tree->left) - binary_height(tree->right));
 	}
 
 	return (0);
@@ -22,16 +22,15 @@ int binary_tree_balance(const binary_tree_t *tree)
  * @tree: The root node to measure
  * Return: The height of the tree
  */
-int height(const binary_tree_t *tree)
+int binary_height(const binary_tree_t *tree)
 {
 	int l = 0;
 	int r = 0;
 
 	if (tree)
 	{
-		r = ((tree->left) ? 1 + height(tree->right) : 1);
-
-		l = ((tree->right) ? 1 + height(tree->left) : 1);
+		r = tree->left ? 1 + binary_height(tree->right) : 1;
+		l = tree->right ? 1 + binary_height(tree->left) : 1;
 
 		return ((l > r) ? l : r);
 	}
