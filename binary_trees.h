@@ -80,4 +80,6 @@ binary_tree_t *find_root_node(const binary_tree_t *tree);
 
 binary_tree_t *find_ancestor(const binary_tree_t *root, const binary_tree_t *second);
 
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+
 #endif /* _BINARY_TREES_H_ */
